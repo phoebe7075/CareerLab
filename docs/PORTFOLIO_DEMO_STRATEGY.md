@@ -85,6 +85,13 @@ demo seed
 - `npm run build:demo:pages`는 GitHub Pages project site용 `/CareerLab/` base path로 demo build를 만든다.
 - 일반 `npm run dev` / `npm run build`는 기존 로컬 작업용 seed profile을 유지한다.
 
+현재 공개 상태:
+
+- public GitHub repo는 `https://github.com/phoebe7075/CareerLab`이다.
+- GitHub Pages URL은 `https://phoebe7075.github.io/CareerLab/`이다.
+- `main` 브랜치에 push하면 GitHub Actions가 lint와 demo build를 실행한 뒤 Pages를 갱신한다.
+- 이 repo는 공개 demo seed만 포함해야 하며, 실제 개인 데이터, 내부 수치, 민감 docs/report를 추가하지 않는다.
+
 ## 공개 배포 단계
 
 ### Phase 1. Local-first MVP
@@ -98,19 +105,17 @@ demo seed
 
 - demo seed를 별도로 만든다.
 - 실제 회사명과 개인 정보를 제거한다.
-- GitHub Pages, Vercel, Netlify 중 하나로 정적 배포한다.
+- GitHub Pages로 정적 배포한다.
 - 배포 URL에서 IndexedDB 저장과 백업/가져오기 흐름이 동작하는지 확인한다.
 - README에 demo URL, 실행 방법, 검증 명령, 핵심 사용자 흐름을 정리한다.
 
 ### Phase 3. CI/CD
 
-- GitHub Actions에서 아래 명령을 자동 실행한다.
+- public repo는 GitHub Actions에서 아래 명령을 자동 실행한다.
   - `npm run lint`
-  - `npm test`
   - `npm run build:demo`
-  - 필요 시 `npm run ui:check`
-  - 공개 demo 회귀 확인이 필요하면 `npm run ui:check:demo`
-- main 또는 release 브랜치에 병합될 때 정적 배포가 갱신되도록 구성한다.
+- 공개 demo 회귀 확인이 필요하면 수동 또는 로컬에서 `npm run ui:check:demo`를 실행한다.
+- `main` 브랜치에 push될 때 정적 배포가 갱신된다.
 - Playwright는 실행 시간이 길 수 있으므로 별도 job이나 수동 trigger로 분리할 수 있다.
 
 ### Phase 4. Optional Cloud Sync
@@ -164,7 +169,7 @@ Cloud sync mode
 - demo prompt history 샘플 구성 - 완료
 - GitHub Pages용 Vite `base` 설정 검토 - 완료
 - demo 전용 Playwright smoke check 추가 - 완료
-- GitHub Actions build/test workflow 추가
+- GitHub Actions Pages workflow 추가 - 완료
 - README에 portfolio demo URL과 핵심 흐름 추가
 - 공개 데모용 스크린샷 또는 짧은 walkthrough 작성
 
