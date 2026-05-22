@@ -65,7 +65,7 @@ npm run build:demo:pages
 Start-Process powershell -WindowStyle Hidden -ArgumentList @(
   "-NoProfile",
   "-Command",
-  "cd 'C:\Users\phoeb\Documents\CareerLab'; npm run dev -- --host 127.0.0.1 --port 5173 --strictPort"
+  "cd '<repo-root>'; npm run dev -- --host 127.0.0.1 --port 5173 --strictPort"
 )
 ```
 
