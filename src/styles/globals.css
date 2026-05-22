@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background: #f7f7f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: #f7f7f5;
+  color: #18181b;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+textarea,
+input,
+select {
+  color-scheme: light;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+* {
+  scrollbar-color: transparent transparent;
+  scrollbar-width: thin;
+}
+
+*:hover,
+*:focus-within {
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-clip: content-box;
+  background-color: transparent;
+  border: 3px solid transparent;
+  border-radius: 999px;
+}
+
+*:hover::-webkit-scrollbar-thumb,
+*:focus-within::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+@keyframes toast-progress-countdown {
+  from {
+    transform: scaleX(1);
+  }
+
+  to {
+    transform: scaleX(0);
+  }
+}
+
+.toast-progress-bar {
+  animation-name: toast-progress-countdown;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  transform-origin: left center;
+}

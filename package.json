@@ -1,0 +1,50 @@
+{
+  "name": "career-lab",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "imports": {
+    "#career-lab-seed-data": "./src/data/seed/runtimeDemo.ts"
+  },
+  "scripts": {
+    "dev": "vite --mode demo",
+    "dev:demo": "vite --mode demo",
+    "build": "tsc -b && vite build --mode demo",
+    "build:demo": "tsc -b && vite build --mode demo",
+    "build:demo:pages": "tsc -b && vite build --mode demo-pages",
+    "lint": "eslint .",
+    "test": "npm run ui:check:demo",
+    "ui:check": "playwright test -c playwright.demo.config.ts",
+    "ui:check:demo": "playwright test -c playwright.demo.config.ts",
+    "ui:check:headed": "playwright test -c playwright.demo.config.ts --headed",
+    "ui:report": "playwright show-report"
+  },
+  "dependencies": {
+    "dexie": "^4.4.2",
+    "lucide-react": "^1.14.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.59.1",
+    "@tailwindcss/vite": "^4.2.4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^25.6.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.3.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "fake-indexeddb": "^6.2.5",
+    "globals": "^17.6.0",
+    "jsdom": "^29.1.1",
+    "tailwindcss": "^4.2.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.2",
+    "vite": "^8.0.11",
+    "vitest": "^4.1.5"
+  }
+}
